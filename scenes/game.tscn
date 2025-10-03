@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://b88brcgx8fclf"]
+[gd_scene load_steps=16 format=3 uid="uid://b88brcgx8fclf"]
 
+[ext_resource type="Script" uid="uid://cdtrewpl331b7" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://digis3gaarqls" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://mkjxpebi3fg2" path="res://assets/sprites/world_tileset.png" id="1_yqjtg"]
+[ext_resource type="FontFile" uid="uid://d1ijopgedqd8h" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://yq8mwcp7706n" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://lvb0bvf3topm" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bk6ma6e4chr4s" path="res://scenes/kill_zone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://br47ni5jh58fu" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://0mb3tk1bcy3r" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -215,6 +218,21 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 664.0
+offset_top = -224.0
+offset_right = 770.0
+offset_bottom = -202.0
+theme_override_fonts/font = ExtResource("2_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "U COlected 0 coins u stupid "
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
@@ -273,3 +291,24 @@ autoplay = "move"
 
 [node name="slime" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(825, 4)
+
+[node name="labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="labels"]
+offset_left = -90.0
+offset_top = -64.0
+offset_right = 90.0
+offset_bottom = -48.0
+theme_override_colors/font_color = Color(0.88169, 0.890846, 0.92546, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Space to Jump "
+
+[node name="Label2" type="Label" parent="labels"]
+offset_left = 664.0
+offset_top = -243.0
+offset_right = 770.0
+offset_bottom = -220.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 16
+text = "GOOD JOB"

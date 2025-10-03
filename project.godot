@@ -15,6 +15,10 @@ run/main_scene="uid://b88brcgx8fclf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://chbvdupek1mt8"
 
+[autoload]
+
+Music="*res://scenes/music.tscn"
+
 [dotnet]
 
 project/assembly_name="how to mak ea video game"
