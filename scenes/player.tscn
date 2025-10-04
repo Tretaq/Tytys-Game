@@ -180,7 +180,7 @@ script = ExtResource("1_g2els")
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"jump"
-frame_progress = 0.754957
+frame_progress = 0.262988
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
